@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/PMS_Assignment2/laser.cpp
+laser.h
+/home/student/PMS_Assignment2/laser.h
+
+/home/student/PMS_Assignment2/laser.h
+
+/home/student/PMS_Assignment2/radar.cpp
+radar.h
+/home/student/PMS_Assignment2/radar.h
+
+/home/student/PMS_Assignment2/radar.h
+
+/home/student/PMS_Assignment2/rangerfusion.cpp
+rangerfusion.h
+/home/student/PMS_Assignment2/rangerfusion.h
+
+/home/student/PMS_Assignment2/rangerfusion.h
+
+/home/student/PMS_Assignment2/sonar.cpp
+sonar.h
+/home/student/PMS_Assignment2/sonar.h
+
+/home/student/PMS_Assignment2/sonar.h
+
