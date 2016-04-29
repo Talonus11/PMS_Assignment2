@@ -2,10 +2,10 @@
 cmake_minimum_required (VERSION 2.6)
 
 # Any ppoject name will suffice, this has connotaions when using advanced CMake Features
-project (Assignment1_Ritesh_KUMAR_11656978)
+project (Assignment2_11377773_Chris_Schiller)
 
 # CMake will now create the Makefiles that are needed to make an executable "main" that requires "main.cpp" and "lidar.cpp" 
-add_executable(main main.cpp lidar.cpp)
+add_executable(Assignment2 main.cpp ranger.cpp rangerfusion.cpp radar.cpp sonar.cpp laser.cpp)
 
 add_definitions(-std=c++11)
 
