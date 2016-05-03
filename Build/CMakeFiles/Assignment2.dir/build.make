@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/student/PMS_Assignment2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/PMS_Assignment2/build
+CMAKE_BINARY_DIR = /home/student/PMS_Assignment2/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Assignment2.dir/depend.make
@@ -54,7 +54,7 @@ include CMakeFiles/Assignment2.dir/flags.make
 
 CMakeFiles/Assignment2.dir/main.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/main.cpp.o -c /home/student/PMS_Assignment2/main.cpp
 
@@ -77,7 +77,7 @@ CMakeFiles/Assignment2.dir/main.cpp.o.provides.build: CMakeFiles/Assignment2.dir
 
 CMakeFiles/Assignment2.dir/ranger.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/ranger.cpp.o: ../ranger.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/ranger.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/ranger.cpp.o -c /home/student/PMS_Assignment2/ranger.cpp
 
@@ -100,7 +100,7 @@ CMakeFiles/Assignment2.dir/ranger.cpp.o.provides.build: CMakeFiles/Assignment2.d
 
 CMakeFiles/Assignment2.dir/rangerfusion.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/rangerfusion.cpp.o: ../rangerfusion.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/rangerfusion.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/rangerfusion.cpp.o -c /home/student/PMS_Assignment2/rangerfusion.cpp
 
@@ -123,7 +123,7 @@ CMakeFiles/Assignment2.dir/rangerfusion.cpp.o.provides.build: CMakeFiles/Assignm
 
 CMakeFiles/Assignment2.dir/radar.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/radar.cpp.o: ../radar.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/radar.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/radar.cpp.o -c /home/student/PMS_Assignment2/radar.cpp
 
@@ -146,7 +146,7 @@ CMakeFiles/Assignment2.dir/radar.cpp.o.provides.build: CMakeFiles/Assignment2.di
 
 CMakeFiles/Assignment2.dir/sonar.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/sonar.cpp.o: ../sonar.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/sonar.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/sonar.cpp.o -c /home/student/PMS_Assignment2/sonar.cpp
 
@@ -169,7 +169,7 @@ CMakeFiles/Assignment2.dir/sonar.cpp.o.provides.build: CMakeFiles/Assignment2.di
 
 CMakeFiles/Assignment2.dir/laser.cpp.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/laser.cpp.o: ../laser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/student/PMS_Assignment2/Build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Assignment2.dir/laser.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Assignment2.dir/laser.cpp.o -c /home/student/PMS_Assignment2/laser.cpp
 
@@ -230,6 +230,6 @@ CMakeFiles/Assignment2.dir/clean:
 .PHONY : CMakeFiles/Assignment2.dir/clean
 
 CMakeFiles/Assignment2.dir/depend:
-	cd /home/student/PMS_Assignment2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/PMS_Assignment2 /home/student/PMS_Assignment2 /home/student/PMS_Assignment2/build /home/student/PMS_Assignment2/build /home/student/PMS_Assignment2/build/CMakeFiles/Assignment2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/student/PMS_Assignment2/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/PMS_Assignment2 /home/student/PMS_Assignment2 /home/student/PMS_Assignment2/Build /home/student/PMS_Assignment2/Build /home/student/PMS_Assignment2/Build/CMakeFiles/Assignment2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Assignment2.dir/depend
 

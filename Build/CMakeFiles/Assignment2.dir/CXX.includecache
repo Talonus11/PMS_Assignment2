@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/PMS_Assignment2/main.cpp
+cstdio
+-
+cstdlib
+-
+iostream
+-
+ctime
+-
+random
+-
+windows.h
+-
+unistd.h
+-
+
