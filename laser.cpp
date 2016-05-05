@@ -63,13 +63,20 @@ int Laser::getArraySize()
 
 // SET Methods
 
-//void Laser::setAngularResolution(double x)
-//{
-//    if (x == 0.5 || x == 1.0)
-//        angularResolution = x;
-//    else
-//        printf("Error: Angular Resolution must be either 0.5 or 1.0.\n");
-//}
+int Laser::setAngularResolution(int input)
+{
+    if (input == ang_res0_)
+    {
+        angRes = ang_res0_;
+        return 1;
+    }
+    else if (input == ang_res1_)
+    {
+        angRes = ang_res1_;
+        return 1;
+    }
+    else return 0;
+}
 
 int Laser::setPORT(int input)
 {
@@ -91,13 +98,20 @@ int Laser::setPORT(int input)
     else return 0;
 }
 
-//void Laser::setBaud(int x)
-//{
-//        if (x == 38400 || x == 115200)
-//        baud = x;
-//    else
-//        printf("Error: Baud Rate must be either 38400 or 115200\n");
-//}
+int Laser::setBaud(int input)
+{
+    if (input == baud0_)
+    {
+        baud = baud0_;
+        return 1;
+    }
+    else if (input == baud1_)
+    {
+        baud = baud1_;
+        return 1;
+    }
+    else return 0;
+}
 
 // Other Methods
 void Laser::calcArraySize()

@@ -22,10 +22,8 @@ public:
     int getArraySize();
 
 // SET Methods
-    void setBaud(int);
-    void setPortNumber(int);
-    void setAngularResolution(double);
-    void setScanningTime(int);
+    int setBaud(int);
+    int setAngularResolution(int);
     int setPORT(int);
 
     void calcArraySize();
