@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/student/PMS_Assignment2/generator.h
+ctime
+-
+random
+-
+
+/home/student/PMS_Assignment2/laser.h
+string
+-
+ranger.h
+/home/student/PMS_Assignment2/ranger.h
+
 /home/student/PMS_Assignment2/main.cpp
 cstdio
 -
@@ -17,8 +29,36 @@ ctime
 -
 random
 -
+generator.h
+/home/student/PMS_Assignment2/generator.h
+string
+-
+radar.h
+/home/student/PMS_Assignment2/radar.h
+ranger.h
+/home/student/PMS_Assignment2/ranger.h
+sonar.h
+/home/student/PMS_Assignment2/sonar.h
+laser.h
+/home/student/PMS_Assignment2/laser.h
 windows.h
 -
 unistd.h
 -
+
+/home/student/PMS_Assignment2/radar.h
+string
+-
+ranger.h
+/home/student/PMS_Assignment2/ranger.h
+
+/home/student/PMS_Assignment2/ranger.h
+string
+-
+
+/home/student/PMS_Assignment2/sonar.h
+string
+-
+ranger.h
+/home/student/PMS_Assignment2/ranger.h
 

@@ -26,7 +26,7 @@ public:
     void setPortNumber(int);
     void setAngularResolution(double);
     void setScanningTime(int);
-    void setPORT(int);
+    int setPORT(int);
 
     void calcArraySize();
 

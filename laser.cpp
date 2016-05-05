@@ -71,23 +71,25 @@ int Laser::getArraySize()
 //        printf("Error: Angular Resolution must be either 0.5 or 1.0.\n");
 //}
 
-//void Laser::setPORT(int x)
-//{
-//    switch (x)
-//    {
-//        case 0:
-//            PORT = "USB: /dev/ttyACM0";
-//            break;
-//        case 1:
-//            PORT = "USB: /dev/ttyACM1";
-//            break;
-//        case 2:
-//            PORT = "USB: /dev/ttyACM2";
-//            break;
-//        default:
-//            printf("Error: Port Number must be either 0, 1 or 2.\n");
-//    }
-//}
+int Laser::setPORT(int input)
+{
+    if (input == port0_)
+    {
+        portNumber = port0_;
+        return 1;
+    }
+    else if (input == port1_)
+    {
+        portNumber = port1_;
+        return 1;
+    }
+    else if (input == port2_)
+    {
+        portNumber = port2_;
+        return 1;
+    }
+    else return 0;
+}
 
 //void Laser::setBaud(int x)
 //{

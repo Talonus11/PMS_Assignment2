@@ -114,6 +114,30 @@ Assignment2/fast:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/build
 .PHONY : Assignment2/fast
 
+generator.o: generator.cpp.o
+.PHONY : generator.o
+
+# target to build an object file
+generator.cpp.o:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/generator.cpp.o
+.PHONY : generator.cpp.o
+
+generator.i: generator.cpp.i
+.PHONY : generator.i
+
+# target to preprocess a source file
+generator.cpp.i:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/generator.cpp.i
+.PHONY : generator.cpp.i
+
+generator.s: generator.cpp.s
+.PHONY : generator.s
+
+# target to generate assembly for a file
+generator.cpp.s:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/generator.cpp.s
+.PHONY : generator.cpp.s
+
 laser.o: laser.cpp.o
 .PHONY : laser.o
 
@@ -267,6 +291,9 @@ help:
 	@echo "... Assignment2"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... generator.o"
+	@echo "... generator.i"
+	@echo "... generator.s"
 	@echo "... laser.o"
 	@echo "... laser.i"
 	@echo "... laser.s"

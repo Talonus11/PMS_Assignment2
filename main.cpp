@@ -3,6 +3,13 @@
 #include <iostream>
 #include <ctime>
 #include <random>
+#include "generator.h"
+#include <string>
+
+#include "radar.h"
+#include "ranger.h"
+#include "sonar.h"
+#include "laser.h"
 
 using namespace std;
 
@@ -27,33 +34,36 @@ using namespace std;
 #endif
 
 
-
-// NormalGenerator function - Returns a single value that is within a normal distribution with a mean and std deviation as set by parameters passed as arguments
-
-double normalGenerator(double mean, double stdDev)
-{
-    default_random_engine generator(time(0));
-    normal_distribution<double> distribution(mean,stdDev);
-
-    return distribution(generator);
-}
-
-
 int main( int argc, char ** argv )
 {
-    printf("Code running successfully\n");
+    double dinput; // user input for doubles
+    int uinput; // user input for ints
+    cout << "Program started" << endl;
+    Laser laser1;
+    Radar radar1;
+    Sonar sonar1;
+    cout << "Rangers created" << endl;
 
-    double distArray [101];
+    /******* LASER FIXED PARAMETERS PRINT *******/
+    cout << "*****LASER*****" << endl;
+    cout << "Fixed Parameters" << endl;
+    cout << "Model: " << laser1.getModel() << endl;
+    cout << "Field of View (FOV): " << laser1.getFOV() << "degrees" << endl;
+    cout << "Scan range: " << laser1.getMinDistance() << "m - " << laser1.getMaxDistance() << "m" << endl << endl;
 
-    default_random_engine generator(time(0));
-    normal_distribution<double> distribution(6.0,5.0);
+    /******* LASER SETTING PARAMETERS *******/
+    cout << "Setting non-fixed parameters" << endl;
 
-    for (int i = 0; i < 101; i++)
+    /*** PORT SET ***/
+    cout << "Default Port: " << laser1.getPortDir() << laser1.getPortNumber() << endl;
+    cout << "Set Port Number (0,1,2) " << laser1.getPortDir();
+    cin >> uinput;
+
+    if (laser1.setPORT(uinput) == 0)
     {
-        cout << "#" << i << "= " << distribution(generator) << endl;
+        cout << "Unable to set port - incorrect value entered. Reverting to default: " << laser1.getPortNumber() << endl;
     }
-
-
+    cout << "Port set to: " << laser1.getPortDir() << laser1.getPortNumber() << endl;
 
 
 

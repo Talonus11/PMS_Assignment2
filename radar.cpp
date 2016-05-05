@@ -8,8 +8,7 @@ Radar::Radar()
     baud = baud0_;
     portNumber = port0_;
     portDir = PORT_STRING_;
-    FOV = FOV_;
-    angRes = ang_res0_;
+    FOV = FOV1_;
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
 }
@@ -39,11 +38,6 @@ double Radar::getMaxDistance()
 double Radar::getMinDistance()
 {
     return minDistance;
-}
-
-double Radar::getAngularResolution()
-{
-    return angRes;
 }
 
 int Radar::getFOV()
@@ -98,7 +92,3 @@ int Radar::getArraySize()
 //}
 
 // Other Methods
-void Radar::calcArraySize()
-{
-    a_size = FOV/angRes;
-}
