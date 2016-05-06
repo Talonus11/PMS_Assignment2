@@ -24,6 +24,7 @@ public:
 // SET Methods
     int setPORT(int);
     int setFOV(int);
+    int setBaud(int);
 
 
     void calcArraySize();

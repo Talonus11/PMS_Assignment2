@@ -50,6 +50,22 @@ int nextPort()
     else return 0;
 }
 
+void portTaken(int input)
+{
+    switch (input)
+    {
+        case 0:
+            port0Taken = true;
+            break;
+        case 1:
+            port1Taken = true;
+            break;
+        case 2:
+            port2Taken = true;
+            break;
+    }
+}
+
 
 int main( int argc, char ** argv )
 {
@@ -89,18 +105,7 @@ int main( int argc, char ** argv )
         port0Taken = true;
     }
     cout << "Port set to: " << laser1.getPortDir() << laser1.getPortNumber() << endl << endl;
-    switch (uinput)
-    {
-        case 0:
-            port0Taken = true;
-            break;
-        case 1:
-            port1Taken = true;
-            break;
-        case 2:
-            port2Taken = true;
-            break;
-    }
+    portTaken(uinput);
 
 
     /**** BAUD SET ****/
@@ -109,7 +114,7 @@ int main( int argc, char ** argv )
     cout << "Set Baud (38400 or 115200): ";
     cin >> uinput;
 
-    if (laser1.setBaud(uinput) == 0) // checks setPort method was successful (returns 1)
+    if (laser1.setBaud(uinput) == 0) // checks setBaud method was successful (returns 1)
     {
         cout << "Unable to set Baud - incorrect value entered. Reverting to default: " << laser1.getBaud() << endl;
     }
@@ -122,7 +127,7 @@ int main( int argc, char ** argv )
     cout << "Set AngRes (15 or 30) degrees: ";
     cin >> uinput;
 
-    if (laser1.setAngularResolution(uinput) == 0) // checks setPort method was successful (returns 1)
+    if (laser1.setAngularResolution(uinput) == 0) // checks setAngRes method was successful (returns 1)
     {
         cout << "Unable to set AngRes - incorrect value entered. Reverting to default: " << laser1.getAngularResolution() << endl;
     }
@@ -170,11 +175,17 @@ int main( int argc, char ** argv )
         if (radar1.setPORT(uinput) == 0) // checks setPort method was successful (returns 1)
         {
             cout << "Unable to set port - incorrect value entered. Choosing next available port." << endl;
+            if (radar1.setPORT(nextPort()) == 1) // gets next free port, sends it to be set, then checks it was successful
+            {
+                cout << "Port set to: " << radar1.getPortNumber() << endl;
+                portTaken(nextPort());
+            }
 
         }
         else // success
         {
             cout << "Port set to: " << radar1.getPortNumber() << endl;
+            portTaken(uinput);
         }
     }
     else //clashes
@@ -183,8 +194,22 @@ int main( int argc, char ** argv )
         if (radar1.setPORT(nextPort()) == 1) // gets next free port, sends it to be set, then checks it was successful
         {
             cout << "Port set to: " << radar1.getPortNumber() << endl;
+            portTaken(nextPort());
         }
     }
+
+
+    /**** BAUD SET ****/
+
+    cout << "Default Baud: " << radar1.getBaud() << endl;
+    cout << "Set Baud (38400 or 115200): ";
+    cin >> uinput;
+
+    if (radar1.setBaud(uinput) == 0) // checks setBaud method was successful (returns 1)
+    {
+        cout << "Unable to set Baud - incorrect value entered. Reverting to default: " << radar1.getBaud() << endl;
+    }
+    cout << "Baud set to: " << radar1.getBaud() << endl << endl;
 
 
     /**** FOV SET ****/
@@ -198,6 +223,118 @@ int main( int argc, char ** argv )
         cout << "Unable to set FOV - incorrect value entered. Reverting to default: " << radar1.getFOV() << endl;
     }
     cout << "FOV set to: " << radar1.getFOV() << endl << endl;
+
+
+    /**** RADAR ALL PARAMETERS PRINT ****/
+
+    cout << "----- FINAL SET VALUES -----" << endl;
+    cout << "Model: " << radar1.getModel() << endl;
+    cout << "Baud: " << radar1.getBaud() << endl;
+    cout << "Port: " << radar1.getPortDir() << radar1.getPortNumber() << endl;
+    cout << "FOV: " << radar1.getFOV() << endl;
+    cout << "Min Distance: " << radar1.getMinDistance() << endl;
+    cout << "Max Distance: " << radar1.getMaxDistance() << endl;
+    cout << endl;
+
+
+    //////////////////////////////////////////////
+    /******* SONAR FIXED PARAMETERS PRINT *******/
+    //////////////////////////////////////////////
+
+    cout << "*****SONAR*****" << endl;
+    cout << "Fixed Parameters" << endl;
+    cout << "Model: " << sonar1.getModel() << endl;
+    cout << "Scan range: " << sonar1.getMinDistance() << "m - " << sonar1.getMaxDistance() << "m" << endl << endl;
+
+
+    //////////////////////////////////////////
+    /******* SONAR SETTING PARAMETERS *******/
+    //////////////////////////////////////////
+
+    cout << "Setting non-fixed parameters" << endl;
+
+
+    /**** PORT SET ****/
+
+    cout << "Default Port: " << sonar1.getPortDir() << sonar1.getPortNumber() << endl;
+    cout << "Set Port Number (0,1,2) " << sonar1.getPortDir();
+    cin >> uinput;
+
+    if ((uinput != laser1.getPortNumber()) && (uinput != radar1.getPortNumber())) // checks if the port entered clashes with the laser sensor port
+    {
+        if (sonar1.setPORT(uinput) == 0) // checks setPort method was successful (returns 1)
+        {
+            cout << "Unable to set port - incorrect value entered. Choosing next available port." << endl;
+            if (sonar1.setPORT(nextPort()) == 1) // gets next free port, sends it to be set, then checks it was successful
+            {
+                cout << "Port set to: " << sonar1.getPortNumber() << endl;
+                portTaken(nextPort());
+            }
+
+        }
+        else // success
+        {
+            cout << "Port set to: " << sonar1.getPortNumber() << endl;
+            portTaken(uinput);
+        }
+    }
+    else //clashes
+    {
+        cout << "Port unavailable. Choosing next available port. " << endl;
+        if (sonar1.setPORT(nextPort()) == 1) // gets next free port, sends it to be set, then checks it was successful
+        {
+            cout << "Port set to: " << sonar1.getPortNumber() << endl;
+            portTaken(nextPort());
+        }
+    }
+
+
+    /**** BAUD SET ****/
+
+    cout << "Default Baud: " << sonar1.getBaud() << endl;
+    cout << "Set Baud (38400 or 115200): ";
+    cin >> uinput;
+
+    if (sonar1.setBaud(uinput) == 0) // checks setBaud method was successful (returns 1)
+    {
+        cout << "Unable to set Baud - incorrect value entered. Reverting to default: " << sonar1.getBaud() << endl;
+    }
+    cout << "Baud set to: " << sonar1.getBaud() << endl << endl;
+
+
+    /**** LASER ALL PARAMETERS PRINT ****/
+
+    cout << "----- LASER FINAL SET VALUES -----" << endl;
+    cout << "Model: " << laser1.getModel() << endl;
+    cout << "Baud: " << laser1.getBaud() << endl;
+    cout << "Port: " << laser1.getPortDir() << laser1.getPortNumber() << endl;
+    cout << "FOV: " << laser1.getFOV() << endl;
+    cout << "AngRes: " << laser1.getAngularResolution() << endl;
+    cout << "Min Distance: " << laser1.getMinDistance() << endl;
+    cout << "Max Distance: " << laser1.getMaxDistance() << endl;
+    cout << endl;
+
+    /**** RADAR ALL PARAMETERS PRINT ****/
+
+    cout << "----- RADAR FINAL SET VALUES -----" << endl;
+    cout << "Model: " << radar1.getModel() << endl;
+    cout << "Baud: " << radar1.getBaud() << endl;
+    cout << "Port: " << radar1.getPortDir() << radar1.getPortNumber() << endl;
+    cout << "FOV: " << radar1.getFOV() << endl;
+    cout << "Min Distance: " << radar1.getMinDistance() << endl;
+    cout << "Max Distance: " << radar1.getMaxDistance() << endl;
+    cout << endl;
+
+    /**** SONAR ALL PARAMETERS PRINT ****/
+
+    cout << "----- SONAR FINAL SET VALUES -----" << endl;
+    cout << "Model: " << sonar1.getModel() << endl;
+    cout << "Baud: " << sonar1.getBaud() << endl;
+    cout << "Port: " << sonar1.getPortDir() << sonar1.getPortNumber() << endl;
+    cout << "FOV: " << sonar1.getFOV() << endl;
+    cout << "Min Distance: " << sonar1.getMinDistance() << endl;
+    cout << "Max Distance: " << sonar1.getMaxDistance() << endl;
+    cout << endl;
 
     return 0;
 }

@@ -98,12 +98,19 @@ int Radar::setPORT(int input)
 }
 
 
-//void Radar::setBaud(int x)
-//{
-//        if (x == 38400 || x == 115200)
-//        baud = x;
-//    else
-//        printf("Error: Baud Rate must be either 38400 or 115200\n");
-//}
+int Radar::setBaud(int input)
+{
+    if (input == baud0_)
+    {
+        baud = baud0_;
+        return 1;
+    }
+    else if (input == baud1_)
+    {
+        baud = baud1_;
+        return 1;
+    }
+    else return 0;
+}
 
 // Other Methods
