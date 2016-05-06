@@ -12,6 +12,7 @@ Laser::Laser()
     angRes = ang_res0_;
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
+    portSet = false;
 }
 
 // GET Methods
@@ -56,6 +57,11 @@ int Laser::getBaud()
     return baud;
 }
 
+bool Laser::getPortSet()
+{
+    return portSet;
+}
+
 int Laser::getArraySize()
 {
     return a_size;
@@ -83,16 +89,19 @@ int Laser::setPORT(int input)
     if (input == port0_)
     {
         portNumber = port0_;
+        portSet = true;
         return 1;
     }
     else if (input == port1_)
     {
         portNumber = port1_;
+        portSet = true;
         return 1;
     }
     else if (input == port2_)
     {
         portNumber = port2_;
+        portSet = true;
         return 1;
     }
     else return 0;

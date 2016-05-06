@@ -11,6 +11,7 @@ Radar::Radar()
     FOV = FOV1_;
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
+    portSet = false;
 }
 
 // GET Methods
@@ -65,23 +66,30 @@ int Radar::getArraySize()
 //        printf("Error: Angular Resolution must be either 0.5 or 1.0.\n");
 //}
 
-//void Radar::setPORT(int x)
-//{
-//    switch (x)
-//    {
-//        case 0:
-//            PORT = "USB: /dev/ttyACM0";
-//            break;
-//        case 1:
-//            PORT = "USB: /dev/ttyACM1";
-//            break;
-//        case 2:
-//            PORT = "USB: /dev/ttyACM2";
-//            break;
-//        default:
-//            printf("Error: Port Number must be either 0, 1 or 2.\n");
-//    }
-//}
+int Radar::setPORT(int input)
+{
+
+    if (input == port0_)
+    {
+        portNumber = port0_;
+        portSet = true;
+        return 1;
+    }
+    else if (input == port1_)
+    {
+        portNumber = port1_;
+        portSet = true;
+        return 1;
+    }
+    else if (input == port2_)
+    {
+        portNumber = port2_;
+        portSet = true;
+        return 1;
+    }
+    else return 0;
+}
+
 
 //void Radar::setBaud(int x)
 //{

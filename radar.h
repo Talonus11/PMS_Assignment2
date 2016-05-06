@@ -26,7 +26,8 @@ public:
     void setPortNumber(int);
     void setAngularResolution(double);
     void setScanningTime(int);
-    void setPORT(int);
+    int setPORT(int);
+
 
     void calcArraySize();
 
@@ -40,6 +41,7 @@ private:
     unsigned int FOV;
     double maxDistance;
     double minDistance;
+    bool portSet;
 
 
     //Sensor Variable Options

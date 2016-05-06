@@ -20,6 +20,7 @@ public:
     int getPortNumber();
     int getBaud();
     int getArraySize();
+    bool getPortSet();
 
 // SET Methods
     int setBaud(int);
@@ -39,6 +40,7 @@ private:
     unsigned int angRes;
     double maxDistance;
     double minDistance;
+    bool portSet;
 
 
     //Sensor Variable Options

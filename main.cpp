@@ -33,10 +33,26 @@ using namespace std;
 
 #endif
 
+bool port0Taken = false;
+bool port1Taken = false;
+bool port2Taken = false;
+
+int nextPort()
+{
+    if (port0Taken)
+    {
+        if (port1Taken)
+        {
+            return 2;
+        }
+        else return 1;
+    }
+    else return 0;
+}
+
 
 int main( int argc, char ** argv )
 {
-    double dinput; // user input for doubles
     int uinput; // user input for ints
     cout << "Program started" << endl;
     Laser laser1;
@@ -70,8 +86,21 @@ int main( int argc, char ** argv )
     if (laser1.setPORT(uinput) == 0) // checks setPort method was successful (returns 1)
     {
         cout << "Unable to set port - incorrect value entered. Reverting to default: " << laser1.getPortNumber() << endl;
+        port0Taken = true;
     }
     cout << "Port set to: " << laser1.getPortDir() << laser1.getPortNumber() << endl << endl;
+    switch (uinput)
+    {
+        case 0:
+            port0Taken = true;
+            break;
+        case 1:
+            port1Taken = true;
+            break;
+        case 2:
+            port2Taken = true;
+            break;
+    }
 
 
     /**** BAUD SET ****/
@@ -110,7 +139,59 @@ int main( int argc, char ** argv )
     cout << "AngRes: " << laser1.getAngularResolution() << endl;
     cout << "Min Distance: " << laser1.getMinDistance() << endl;
     cout << "Max Distance: " << laser1.getMaxDistance() << endl;
+    cout << endl;
 
+
+    //////////////////////////////////////////////
+    /******* RADAR FIXED PARAMETERS PRINT *******/
+    //////////////////////////////////////////////
+
+    cout << "*****RADAR*****" << endl;
+    cout << "Fixed Parameters" << endl;
+    cout << "Model: " << radar1.getModel() << endl;
+    cout << "Scan range: " << radar1.getMinDistance() << "m - " << radar1.getMaxDistance() << "m" << endl << endl;
+
+
+    //////////////////////////////////////////
+    /******* RADAR SETTING PARAMETERS *******/
+    //////////////////////////////////////////
+
+    cout << "Setting non-fixed parameters" << endl;
+
+
+    /**** PORT SET ****/
+
+    cout << "Default Port: " << radar1.getPortDir() << radar1.getPortNumber() << endl;
+    cout << "Set Port Number (0,1,2) " << radar1.getPortDir();
+    cin >> uinput;
+
+    if (uinput != laser1.getPortNumber()) // checks if the port entered clashes with the laser sensor port
+    {
+        if (radar1.setPORT(uinput) == 0) // checks setPort method was successful (returns 1)
+        {
+            cout << "Unable to set port - incorrect value entered. Choosing next available port." << endl;
+
+        }
+        else // success
+        {
+            cout << "Port set to: " << radar1.getPortNumber() << endl;
+        }
+    }
+    else //clashes
+    {
+        cout << "Port unavailable. Choosing next available port. " << endl;
+        if (radar1.setPORT(nextPort()) == 1) // gets next free port, sends it to be set, then checks it was successful
+        {
+            cout << "Port set to: " << radar1.getPortNumber() << endl;
+        }
+    }
+
+
+    /**** FOV SET ****/
+
+    cout << "Default FOV: " << radar1.getFOV() << endl;
+    cout << "Set FOV (20 or 40) degrees: ";
+    cin >> uinput;
 
     return 0;
 }

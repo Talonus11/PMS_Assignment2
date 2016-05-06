@@ -40,6 +40,7 @@ private:
     unsigned int FOV;
     double maxDistance;
     double minDistance;
+    bool portSet;
 
 
     //Sensor Variable Options
