@@ -58,13 +58,20 @@ int Radar::getArraySize()
 
 // SET Methods
 
-//void Radar::setAngularResolution(double x)
-//{
-//    if (x == 0.5 || x == 1.0)
-//        angularResolution = x;
-//    else
-//        printf("Error: Angular Resolution must be either 0.5 or 1.0.\n");
-//}
+int Radar::setFOV(int input)
+{
+    if (input == FOV1_)
+    {
+        FOV = FOV1_;
+        return 1;
+    }
+    else if (input == FOV2_)
+    {
+        FOV = FOV2_;
+        return 1;
+    }
+    else return 0;
+}
 
 int Radar::setPORT(int input)
 {

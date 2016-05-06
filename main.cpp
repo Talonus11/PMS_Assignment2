@@ -193,6 +193,12 @@ int main( int argc, char ** argv )
     cout << "Set FOV (20 or 40) degrees: ";
     cin >> uinput;
 
+    if (radar1.setFOV(uinput) == 0) // checks setPort method was successful (returns 1)
+    {
+        cout << "Unable to set FOV - incorrect value entered. Reverting to default: " << radar1.getFOV() << endl;
+    }
+    cout << "FOV set to: " << radar1.getFOV() << endl << endl;
+
     return 0;
 }
 
