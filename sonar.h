@@ -19,7 +19,6 @@ public:
     int getFOV();
     int getPortNumber();
     int getBaud();
-    int getArraySize();
 
 // SET Methods
     int setPORT(int);

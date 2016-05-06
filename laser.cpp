@@ -1,6 +1,7 @@
 #include "laser.h"
 #include <iostream>
 #include <cstdio>
+#include "generator.h"
 
 Laser::Laser()
 {
@@ -57,15 +58,6 @@ int Laser::getBaud()
     return baud;
 }
 
-bool Laser::getPortSet()
-{
-    return portSet;
-}
-
-int Laser::getArraySize()
-{
-    return a_size;
-}
 
 // SET Methods
 
@@ -123,7 +115,19 @@ int Laser::setBaud(int input)
 }
 
 // Other Methods
-void Laser::calcArraySize()
+
+double* Laser::genArray()
 {
-    a_size = FOV/angRes;
+    Generator myGen;
+    double mean = 6.0;
+    double stdDev = 5.0;
+    double outputArray[13];
+    if (angRes = ang_res0_) //If angular resolution is 15, generate array of 13 values populating all
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+            cout << "DEBUG: outputarray[" << i << "] = " << outputArray[i] << endl;
+        }
+    }
 }

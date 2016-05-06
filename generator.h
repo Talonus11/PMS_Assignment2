@@ -8,7 +8,7 @@ class Generator
 {
 public:
     Generator();
-    double normalGenerator(double mean, double stdDev);
+    double normalGenerator(double mean, double stdDev, double max);
 
 
 private:

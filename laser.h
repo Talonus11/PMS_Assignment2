@@ -19,15 +19,13 @@ public:
     int getFOV();
     int getPortNumber();
     int getBaud();
-    int getArraySize();
-    bool getPortSet();
 
 // SET Methods
     int setBaud(int);
     int setAngularResolution(int);
     int setPORT(int);
 
-    void calcArraySize();
+    double* genArray();
 
 private:
 

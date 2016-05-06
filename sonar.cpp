@@ -51,10 +51,11 @@ int Sonar::getBaud()
     return baud;
 }
 
-int Sonar::getArraySize()
+double Sonar::getAngularResolution()
 {
-    return a_size;
+    return -1.0;
 }
+
 
 // SET Methods
 

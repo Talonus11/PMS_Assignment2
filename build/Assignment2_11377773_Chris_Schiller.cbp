@@ -8,18 +8,18 @@
       <Option virtualFolders="CMake Files\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/home/student/PMS_Assignment2/Build" />
+         <Option working_dir="/home/student/PMS_Assignment2/build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Assignment2">
-         <Option output="/home/student/PMS_Assignment2/Build/Assignment2" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/student/PMS_Assignment2/Build" />
+         <Option output="/home/student/PMS_Assignment2/build/Assignment2" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/student/PMS_Assignment2/build" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -34,15 +34,15 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 Assignment2" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 Assignment2" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Assignment2/fast">
-         <Option output="/home/student/PMS_Assignment2/Build/Assignment2" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/student/PMS_Assignment2/Build" />
+         <Option output="/home/student/PMS_Assignment2/build/Assignment2" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/student/PMS_Assignment2/build" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -57,20 +57,20 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 Assignment2/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 Assignment2/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/home/student/PMS_Assignment2/Build" />
+         <Option working_dir="/home/student/PMS_Assignment2/build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/student/PMS_Assignment2/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>

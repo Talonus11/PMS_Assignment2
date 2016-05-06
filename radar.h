@@ -19,7 +19,6 @@ public:
     int getFOV();
     int getPortNumber();
     int getBaud();
-    int getArraySize();
 
 // SET Methods
     int setPORT(int);
@@ -40,6 +39,7 @@ private:
     double maxDistance;
     double minDistance;
     bool portSet;
+    int angRes;
 
 
     //Sensor Variable Options
@@ -55,7 +55,6 @@ private:
     const int baud0_ = 38400;
     const int baud1_ = 115200;
 
-    int a_size = 0;
 };
 
 #endif // RADAR_H

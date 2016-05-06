@@ -4,6 +4,7 @@
 CMakeFiles/Assignment2.dir/generator.cpp.o: ../generator.cpp
 CMakeFiles/Assignment2.dir/generator.cpp.o: ../generator.h
 
+CMakeFiles/Assignment2.dir/laser.cpp.o: ../generator.h
 CMakeFiles/Assignment2.dir/laser.cpp.o: ../laser.cpp
 CMakeFiles/Assignment2.dir/laser.cpp.o: ../laser.h
 CMakeFiles/Assignment2.dir/laser.cpp.o: ../ranger.h

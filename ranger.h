@@ -12,22 +12,14 @@ public:
     Ranger();
 
 // GET Methods
-    string getModel();
-    string getPortDir();
-    double getMinDistance();
-    double getMaxDistance();
-    double getAngularResolution();
-    int getFOV();
-    int getPortNumber();
-    int getBaud();
-    int getArraySize();
-
-// SET Methods
-    void setBaud(int);
-    void setPortNumber(int);
-    void setAngularResolution(double);
-    void setScanningTime(int);
-    void setPORT(int);
+    virtual string getModel(void) = 0;
+    virtual string getPortDir(void) = 0;
+    virtual double getMinDistance(void) = 0;
+    virtual double getMaxDistance(void) = 0;
+    virtual double getAngularResolution(void) = 0;
+    virtual int getFOV(void) = 0;
+    virtual int getPortNumber(void) = 0;
+    virtual int getBaud(void) = 0;
 };
 
 #endif // RANGER_H

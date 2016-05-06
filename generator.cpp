@@ -6,29 +6,21 @@ using namespace std;
 
 Generator::Generator()
 {
-    default_random_engine name(time(0));
-
 }
 
-double Generator::normalGenerator(double mean, double stdDev)
+double Generator::normalGenerator(double mean, double stdDev, double max)
 {
+    double randomVal;
     static default_random_engine generator(time(0));
     normal_distribution<double> distribution(mean,stdDev);
-    return distribution(generator);
+    randomVal = distribution(generator);
+    if (randomVal < 0.2) // clips values below 0.2 to minDistance
+    {
+        randomVal = 0.2;
+    }
+    if (randomVal > max) // clips values above max to max, where max is passed in as an argument
+    {
+        randomVal = max;
+    }
+    return randomVal;
 }
-
-//    std::random_device rd;
-//    std::mt19937 gen(rd());
-
-//    // values near the mean are the most likely
-//    // standard deviation affects the dispersion of generated values from the mean
-//    std::normal_distribution<> d(mean,stdDev);
-
-//    std::map<int, int> hist;
-//    for(int n=0; n<10000; ++n) {
-//        ++hist[std::round(d(gen))];
-//    }
-//    for(auto p : hist) {
-//        std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-//                  << p.first << ' ' << std::string(p.second/200, '*') << '\n';
-//    }

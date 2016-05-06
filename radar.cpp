@@ -12,6 +12,7 @@ Radar::Radar()
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
     portSet = false;
+    angRes = FOV;
 }
 
 // GET Methods
@@ -51,9 +52,9 @@ int Radar::getBaud()
     return baud;
 }
 
-int Radar::getArraySize()
+double Radar::getAngularResolution()
 {
-    return a_size;
+    return -1.0;
 }
 
 // SET Methods
