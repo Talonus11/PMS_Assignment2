@@ -1,6 +1,7 @@
 #include "sonar.h"
 #include <iostream>
 #include <cstdio>
+#include "generator.h"
 
 Sonar::Sonar()
 {
@@ -56,6 +57,11 @@ double Sonar::getAngularResolution()
     return -1.0;
 }
 
+double* Sonar::getArray()
+{
+    return scanValues;
+}
+
 
 // SET Methods
 
@@ -100,3 +106,31 @@ int Sonar::setBaud(int input)
 }
 
 // Other Methods
+
+double* Sonar::genArray()
+{
+    Generator myGen;
+    double mean = 6.0;
+    double stdDev = 5.0;
+    double outputArray[13];
+
+    double genVal = myGen.normalGenerator(mean,stdDev,maxDistance);
+    for (int i = 0; i < 13; i++)
+    {
+
+        if ((i > 2) && (i < 10))
+        {
+            outputArray[i] = genVal;
+        }
+        else
+        {
+            outputArray[i] = NULL;
+        }
+    }
+
+
+    for (int i = 0; i < 13; i++)
+    {
+        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
+    }
+}

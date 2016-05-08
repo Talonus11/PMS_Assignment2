@@ -1,6 +1,7 @@
 #include "radar.h"
 #include <iostream>
 #include <cstdio>
+#include "generator.h"
 
 Radar::Radar()
 {
@@ -55,6 +56,11 @@ int Radar::getBaud()
 double Radar::getAngularResolution()
 {
     return -1.0;
+}
+
+double* Radar::getArray()
+{
+    return scanValues;
 }
 
 // SET Methods
@@ -115,3 +121,46 @@ int Radar::setBaud(int input)
 }
 
 // Other Methods
+
+double* Radar::genArray()
+{
+    Generator myGen;
+    double mean = 6.0;
+    double stdDev = 5.0;
+    double outputArray[13];
+    if (FOV == FOV1_) //If FOV is 20, generate array of 13 values populating only array slot 6 with a generated value
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            if (i == 6)
+            {
+                outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+            }
+            else
+            {
+                outputArray[i] = NULL;
+            }
+        }
+    }
+    if (FOV == FOV2_) //If FOV is 40, generate array of 13 values populating only array slots 5, 6 and 7 with the same value
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            if (i == 7)
+            {
+                outputArray[5] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                outputArray[6] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                outputArray[7] = myGen.normalGenerator(mean,stdDev,maxDistance);
+            }
+            else
+            {
+                outputArray[i] = NULL;
+            }
+        }
+    }
+
+    for (int i = 0; i < 13; i++)
+    {
+        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
+    }
+}

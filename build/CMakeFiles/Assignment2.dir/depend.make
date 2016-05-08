@@ -16,6 +16,7 @@ CMakeFiles/Assignment2.dir/main.cpp.o: ../radar.h
 CMakeFiles/Assignment2.dir/main.cpp.o: ../ranger.h
 CMakeFiles/Assignment2.dir/main.cpp.o: ../sonar.h
 
+CMakeFiles/Assignment2.dir/radar.cpp.o: ../generator.h
 CMakeFiles/Assignment2.dir/radar.cpp.o: ../radar.cpp
 CMakeFiles/Assignment2.dir/radar.cpp.o: ../radar.h
 CMakeFiles/Assignment2.dir/radar.cpp.o: ../ranger.h
@@ -26,6 +27,7 @@ CMakeFiles/Assignment2.dir/ranger.cpp.o: ../ranger.h
 CMakeFiles/Assignment2.dir/rangerfusion.cpp.o: ../rangerfusion.cpp
 CMakeFiles/Assignment2.dir/rangerfusion.cpp.o: ../rangerfusion.h
 
+CMakeFiles/Assignment2.dir/sonar.cpp.o: ../generator.h
 CMakeFiles/Assignment2.dir/sonar.cpp.o: ../ranger.h
 CMakeFiles/Assignment2.dir/sonar.cpp.o: ../sonar.cpp
 CMakeFiles/Assignment2.dir/sonar.cpp.o: ../sonar.h

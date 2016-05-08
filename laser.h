@@ -19,6 +19,7 @@ public:
     int getFOV();
     int getPortNumber();
     int getBaud();
+    double* getArray();
 
 // SET Methods
     int setBaud(int);
@@ -39,6 +40,7 @@ private:
     double maxDistance;
     double minDistance;
     bool portSet;
+    double scanValues[13];
 
 
     //Sensor Variable Options

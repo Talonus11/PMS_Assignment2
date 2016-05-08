@@ -58,6 +58,11 @@ int Laser::getBaud()
     return baud;
 }
 
+double* Laser::getArray()
+{
+    return scanValues;
+}
+
 
 // SET Methods
 
@@ -122,12 +127,31 @@ double* Laser::genArray()
     double mean = 6.0;
     double stdDev = 5.0;
     double outputArray[13];
-    if (angRes = ang_res0_) //If angular resolution is 15, generate array of 13 values populating all
+    if (angRes == ang_res0_) //If angular resolution is 15, generate array of 13 values populating all
     {
         for (int i = 0; i < 13; i++)
         {
             outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
-            cout << "DEBUG: outputarray[" << i << "] = " << outputArray[i] << endl;
         }
+    }
+    if (angRes == ang_res1_) //If angular resolution is 30, generate array of 13 values populating only even slots
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            if (i % 2 == 0)
+            {
+                outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+            }
+            if (i % 2 == 1)
+            {
+                outputArray[i] = NULL;
+            }
+
+        }
+    }
+
+    for (int i = 0; i < 13; i++)
+    {
+        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
     }
 }

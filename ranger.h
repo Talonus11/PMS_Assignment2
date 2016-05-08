@@ -20,6 +20,7 @@ public:
     virtual int getFOV(void) = 0;
     virtual int getPortNumber(void) = 0;
     virtual int getBaud(void) = 0;
+    virtual double* getArray(void) = 0;
 };
 
 #endif // RANGER_H

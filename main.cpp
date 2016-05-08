@@ -337,6 +337,10 @@ int main( int argc, char ** argv )
 //    cout << "Max Distance: " << sonar1.getMaxDistance() << endl;
 //    cout << endl;
     laser1.genArray();
+    cout << endl;
+    radar1.genArray();
+    cout << endl;
+    sonar1.genArray();
 
 
     return 0;
