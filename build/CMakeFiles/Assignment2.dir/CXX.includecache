@@ -6,45 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/student/PMS_Assignment2/generator.h
-ctime
--
-random
+/home/student/PMS_Assignment2/ranger.h
+string
 -
 
-/home/student/PMS_Assignment2/laser.cpp
-laser.h
-/home/student/PMS_Assignment2/laser.h
+/home/student/PMS_Assignment2/rangerfusion.cpp
+rangerfusion.h
+/home/student/PMS_Assignment2/rangerfusion.h
 iostream
 -
-cstdio
--
-generator.h
-/home/student/PMS_Assignment2/generator.h
 
-/home/student/PMS_Assignment2/laser.h
-string
--
+/home/student/PMS_Assignment2/rangerfusion.h
 ranger.h
 /home/student/PMS_Assignment2/ranger.h
-
-/home/student/PMS_Assignment2/radar.cpp
-radar.h
-/home/student/PMS_Assignment2/radar.h
-iostream
--
-cstdio
--
-generator.h
-/home/student/PMS_Assignment2/generator.h
-
-/home/student/PMS_Assignment2/radar.h
-string
--
-ranger.h
-/home/student/PMS_Assignment2/ranger.h
-
-/home/student/PMS_Assignment2/ranger.h
-string
--
 

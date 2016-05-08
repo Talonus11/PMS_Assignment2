@@ -15,6 +15,7 @@ CMakeFiles/Assignment2.dir/main.cpp.o
  /home/student/PMS_Assignment2/main.cpp
  /home/student/PMS_Assignment2/radar.h
  /home/student/PMS_Assignment2/ranger.h
+ /home/student/PMS_Assignment2/rangerfusion.h
  /home/student/PMS_Assignment2/sonar.h
 CMakeFiles/Assignment2.dir/radar.cpp.o
  /home/student/PMS_Assignment2/generator.h
@@ -25,6 +26,7 @@ CMakeFiles/Assignment2.dir/ranger.cpp.o
  /home/student/PMS_Assignment2/ranger.cpp
  /home/student/PMS_Assignment2/ranger.h
 CMakeFiles/Assignment2.dir/rangerfusion.cpp.o
+ /home/student/PMS_Assignment2/ranger.h
  /home/student/PMS_Assignment2/rangerfusion.cpp
  /home/student/PMS_Assignment2/rangerfusion.h
 CMakeFiles/Assignment2.dir/sonar.cpp.o

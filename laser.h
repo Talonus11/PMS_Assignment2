@@ -26,7 +26,8 @@ public:
     int setAngularResolution(int);
     int setPORT(int);
 
-    double* genArray();
+    void genArray();
+    bool disregard(double check);
 
 private:
 

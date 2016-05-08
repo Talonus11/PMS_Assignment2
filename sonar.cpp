@@ -107,30 +107,31 @@ int Sonar::setBaud(int input)
 
 // Other Methods
 
-double* Sonar::genArray()
+void Sonar::genArray()
 {
     Generator myGen;
     double mean = 6.0;
     double stdDev = 5.0;
-    double outputArray[13];
-
     double genVal = myGen.normalGenerator(mean,stdDev,maxDistance);
     for (int i = 0; i < 13; i++)
     {
 
         if ((i > 2) && (i < 10))
         {
-            outputArray[i] = genVal;
+            scanValues[i] = genVal;
         }
         else
         {
-            outputArray[i] = NULL;
+            scanValues[i] = NULL;
         }
     }
+}
 
-
-    for (int i = 0; i < 13; i++)
+bool Sonar::disregard(double check) // checks if the value is clipped, and therefore should be disregarded
+{
+    if ((check == maxDistance) || (check == minDistance))
     {
-        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
+        return true;
     }
+    else return false;
 }

@@ -10,7 +10,7 @@ Laser::Laser()
     portNumber = port0_;
     portDir = PORT_STRING_;
     FOV = FOV_;
-    angRes = ang_res0_;
+    angRes = ang_res1_;
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
     portSet = false;
@@ -121,17 +121,16 @@ int Laser::setBaud(int input)
 
 // Other Methods
 
-double* Laser::genArray()
+void Laser::genArray()
 {
     Generator myGen;
     double mean = 6.0;
     double stdDev = 5.0;
-    double outputArray[13];
     if (angRes == ang_res0_) //If angular resolution is 15, generate array of 13 values populating all
     {
         for (int i = 0; i < 13; i++)
         {
-            outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+            scanValues[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
         }
     }
     if (angRes == ang_res1_) //If angular resolution is 30, generate array of 13 values populating only even slots
@@ -140,18 +139,22 @@ double* Laser::genArray()
         {
             if (i % 2 == 0)
             {
-                outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                scanValues[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
             }
             if (i % 2 == 1)
             {
-                outputArray[i] = NULL;
+                scanValues[i] = NULL;
             }
 
         }
     }
+}
 
-    for (int i = 0; i < 13; i++)
+bool Laser::disregard(double check) // checks if the value is clipped, and therefore should be disregarded
+{
+    if ((check == maxDistance) || (check == minDistance))
     {
-        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
+        return true;
     }
+    else return false;
 }

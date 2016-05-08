@@ -10,6 +10,7 @@
 #include "ranger.h"
 #include "sonar.h"
 #include "laser.h"
+#include "rangerfusion.h"
 
 using namespace std;
 
@@ -75,6 +76,12 @@ int main( int argc, char ** argv )
     Radar radar1;
     Sonar sonar1;
     cout << "Rangers created" << endl;
+
+    Ranger* rangerArray[3];
+    rangerArray[0] = &laser1;
+    rangerArray[1] = &radar1;
+    rangerArray[2] = &sonar1;
+    cout << "Ranger Array created" << endl;
 
 
 //    //////////////////////////////////////////////
@@ -336,12 +343,15 @@ int main( int argc, char ** argv )
 //    cout << "Min Distance: " << sonar1.getMinDistance() << endl;
 //    cout << "Max Distance: " << sonar1.getMaxDistance() << endl;
 //    cout << endl;
-    laser1.genArray();
-    cout << endl;
-    radar1.genArray();
-    cout << endl;
-    sonar1.genArray();
 
+    RangerFusion fusion;
+    cout << "Choose fusion method (min = 0, avg = 1, max = 2): " << endl;
+    cin >> uinput;
+
+    if (uinput == 1)
+    {
+        fusion.avgFusion(rangerArray);
+    }
 
     return 0;
 }

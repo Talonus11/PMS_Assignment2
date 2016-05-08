@@ -122,23 +122,22 @@ int Radar::setBaud(int input)
 
 // Other Methods
 
-double* Radar::genArray()
+void Radar::genArray()
 {
     Generator myGen;
     double mean = 6.0;
     double stdDev = 5.0;
-    double outputArray[13];
     if (FOV == FOV1_) //If FOV is 20, generate array of 13 values populating only array slot 6 with a generated value
     {
         for (int i = 0; i < 13; i++)
         {
             if (i == 6)
             {
-                outputArray[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                scanValues[i] = myGen.normalGenerator(mean,stdDev,maxDistance);
             }
             else
             {
-                outputArray[i] = NULL;
+                scanValues[i] = NULL;
             }
         }
     }
@@ -148,19 +147,23 @@ double* Radar::genArray()
         {
             if (i == 7)
             {
-                outputArray[5] = myGen.normalGenerator(mean,stdDev,maxDistance);
-                outputArray[6] = myGen.normalGenerator(mean,stdDev,maxDistance);
-                outputArray[7] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                scanValues[5] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                scanValues[6] = myGen.normalGenerator(mean,stdDev,maxDistance);
+                scanValues[7] = myGen.normalGenerator(mean,stdDev,maxDistance);
             }
             else
             {
-                outputArray[i] = NULL;
+                scanValues[i] = NULL;
             }
         }
     }
+}
 
-    for (int i = 0; i < 13; i++)
+bool Radar::disregard(double check) // checks if the value is clipped, and therefore should be disregarded
+{
+    if ((check == maxDistance) || (check == minDistance))
     {
-        cout << "DEBUG: generated array [" << i << "] = " << outputArray[i] << endl;
+        return true;
     }
+    else return false;
 }

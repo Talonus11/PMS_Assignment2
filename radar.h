@@ -26,8 +26,8 @@ public:
     int setFOV(int);
     int setBaud(int);
 
-    double* genArray();
-    void calcArraySize();
+    void genArray();
+    bool disregard(double check);
 
 private:
 
