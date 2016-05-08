@@ -10,7 +10,7 @@ Laser::Laser()
     portNumber = port0_;
     portDir = PORT_STRING_;
     FOV = FOV_;
-    angRes = ang_res1_;
+    angRes = ang_res0_;
     maxDistance = MAX_DISTANCE_;
     minDistance = MIN_DISTANCE_;
     portSet = false;

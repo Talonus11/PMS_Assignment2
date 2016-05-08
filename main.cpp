@@ -348,9 +348,19 @@ int main( int argc, char ** argv )
     cout << "Choose fusion method (min = 0, avg = 1, max = 2): " << endl;
     cin >> uinput;
 
+    if (uinput == 0)
+    {
+        fusion.minFusion(rangerArray);
+    }
+
     if (uinput == 1)
     {
         fusion.avgFusion(rangerArray);
+    }
+
+    if (uinput == 2)
+    {
+        fusion.maxFusion(rangerArray);
     }
 
     return 0;
