@@ -8,9 +8,13 @@ class RangerFusion
 {
 public:
     RangerFusion();
-    double* minFusion(Ranger* rangerArray[3]);
-    double* avgFusion(Ranger* rangerArray[3]);
-    double* maxFusion(Ranger* rangerArray[3]);
+    void minFusion(Ranger* rangerArray[3]);
+    void avgFusion(Ranger* rangerArray[3]);
+    void maxFusion(Ranger* rangerArray[3]);
+    double* getArray();
+
+private:
+    double fusedArray[13];
 };
 
 #endif // RANGERFUSION_H

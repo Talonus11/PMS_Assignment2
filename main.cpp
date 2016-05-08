@@ -348,19 +348,57 @@ int main( int argc, char ** argv )
     cout << "Choose fusion method (min = 0, avg = 1, max = 2): " << endl;
     cin >> uinput;
 
+    double outputArray[10000][13];
+    int y = 0;
     if (uinput == 0)
     {
-        fusion.minFusion(rangerArray);
+        while(1)
+        {
+            cout << "Minimum Values" << endl;
+            fusion.minFusion(rangerArray);
+            for (int i = 0; i < 13; i++)
+            {
+                outputArray[y][i] = (fusion.getArray())[i];
+                cout << "Sequence #[" << y <<"]:["<< i*15 << "] = " << outputArray[y][i] << endl;
+            }
+            cout << endl;
+            y++;
+            delay(1000);
+        }
     }
 
     if (uinput == 1)
     {
-        fusion.avgFusion(rangerArray);
+        while(1)
+        {
+            cout << "Average Values" << endl;
+            fusion.avgFusion(rangerArray);
+            for (int i = 0; i < 13; i++)
+            {
+                outputArray[y][i] = (fusion.getArray())[i];
+                cout << "Sequence #[" << y <<"]:["<< i*15 << "] = " << outputArray[y][i] << endl;
+            }
+            cout << endl;
+            y++;
+            delay(1000);
+        }
     }
 
     if (uinput == 2)
     {
-        fusion.maxFusion(rangerArray);
+        while(1)
+        {
+            cout << "Maximum Values" << endl;
+            fusion.maxFusion(rangerArray);
+            for (int i = 0; i < 13; i++)
+            {
+                outputArray[y][i] = (fusion.getArray())[i];
+                cout << "Sequence #[" << y <<"]:["<< i*15 << "] = " << outputArray[y][i] << endl;
+            }
+            cout << endl;
+            y++;
+            delay(1000);
+        }
     }
 
     return 0;
