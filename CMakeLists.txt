@@ -9,6 +9,7 @@ add_executable(Assignment2 main.cpp ranger.cpp rangerfusion.cpp radar.cpp sonar.
 
 add_definitions(-std=c++11)
 
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread") #used for c++11 and STL stuff
 
 
 

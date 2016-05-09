@@ -63,6 +63,11 @@ double* Radar::getArray()
     return scanValues;
 }
 
+int Radar::getSensorType()
+{
+    return sensorType;
+}
+
 // SET Methods
 
 int Radar::setFOV(int input)
@@ -166,4 +171,9 @@ bool Radar::disregard(double check) // checks if the value is clipped, and there
         return true;
     }
     else return false;
+}
+
+int Radar::setAngularResolution(int)
+{
+    return -1;
 }

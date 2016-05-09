@@ -77,6 +77,12 @@ public:
     /**
      * @brief
      *
+     * @return
+     */
+    virtual int getSensorType(void) = 0;
+    /**
+     * @brief
+     *
      * @param check
      * @return bool
      */
@@ -86,6 +92,26 @@ public:
      *
      */
     virtual void genArray(void) = 0;
+    /**
+      *@brief
+      *
+      */
+    virtual int setPORT(int) = 0;
+    /**
+     * @brief
+     * @return
+     */
+    virtual int setBaud(int) = 0;
+    /**
+     * @brief
+     * @return
+     */
+    virtual int setFOV(int) = 0;
+    /**
+     * @brief
+     * @return
+     */
+    virtual int setAngularResolution(int) = 0;
 };
 
 #endif // RANGER_H

@@ -62,6 +62,11 @@ double* Sonar::getArray()
     return scanValues;
 }
 
+int Sonar::getSensorType()
+{
+    return sensorType;
+}
+
 
 // SET Methods
 
@@ -103,6 +108,16 @@ int Sonar::setBaud(int input)
         return 1;
     }
     else return 0;
+}
+
+int Sonar::setFOV(int)
+{
+    return -1;
+}
+
+int Sonar::setAngularResolution(int)
+{
+    return -1;
 }
 
 // Other Methods

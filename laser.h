@@ -73,6 +73,12 @@ public:
      * @return double
      */
     double* getArray();
+    /**
+     * @brief
+     * returns the type of sensor: 0 = Laser, 1 = Radar, 2 = Sonar
+     * @return
+     */
+    int getSensorType();
 
 // SET Methods
     /**
@@ -109,37 +115,43 @@ public:
      * @return bool
      */
     bool disregard(double check);
+    /**
+     * @brief
+     * returns -1. This method does not serve a purpose for laser, as it does not have an angular resolution. The method exists to allow for agnostic code only.
+     * @return
+     */
+    int setFOV(int);
 
 private:
 
     //Sensor Variables
-    string model; /**< TODO */
-    unsigned int baud; /**< TODO */
-    unsigned int portNumber; /**< TODO */
-    string portDir; /**< TODO */
-    unsigned int FOV; /**< TODO */
-    unsigned int angRes; /**< TODO */
-    double maxDistance; /**< TODO */
-    double minDistance; /**< TODO */
-    bool portSet; /**< TODO */
-    double scanValues[13]; /**< TODO */
+    string model; /**< Model Name */
+    unsigned int baud; /**< Baud Rate */
+    unsigned int portNumber; /**< Number of the Port */
+    string portDir; /**< Directory of the Port */
+    unsigned int FOV; /**< Field of View */
+    unsigned int angRes; /**< Angular Resolution */
+    double maxDistance; /**< Maximum Distance */
+    double minDistance; /**< Minimum Distance */
+    bool portSet; /**< Has the port been set? */
+    double scanValues[13]; /**< Array of scanned values */
+    int sensorType = 0; /**< Identifies the sensor as Laser */
 
 
     //Sensor Variable Options
-    const int FOV_ = 180; /**< TODO */
-    const string MODEL_ = "UTM-XXL"; /**< TODO */
-    const double MIN_DISTANCE_ = 0.2; /**< TODO */
-    const double MAX_DISTANCE_ = 8.0; /**< TODO */
-    const string PORT_STRING_ = "USB: /dev/ttyACM"; /**< TODO */
-    const int port0_ = 0; /**< TODO */
-    const int port1_ = 1; /**< TODO */
-    const int port2_ = 2; /**< TODO */
-    const int baud0_ = 38400; /**< TODO */
-    const int baud1_ = 115200; /**< TODO */
-    const double ang_res0_ = 15; /**< TODO */
-    const double ang_res1_ = 30; /**< TODO */
+    const int FOV_ = 180;
+    const string MODEL_ = "UTM-XXL";
+    const double MIN_DISTANCE_ = 0.2;
+    const double MAX_DISTANCE_ = 8.0;
+    const string PORT_STRING_ = "USB: /dev/ttyACM";
+    const int port0_ = 0;
+    const int port1_ = 1;
+    const int port2_ = 2;
+    const int baud0_ = 38400;
+    const int baud1_ = 115200;
+    const double ang_res0_ = 15;
+    const double ang_res1_ = 30;
 
-    int a_size = 0; /**< TODO */
 };
 
 #endif // LASER_H

@@ -63,6 +63,11 @@ double* Laser::getArray()
     return scanValues;
 }
 
+int Laser::getSensorType()
+{
+    return sensorType;
+}
+
 
 // SET Methods
 
@@ -117,6 +122,11 @@ int Laser::setBaud(int input)
         return 1;
     }
     else return 0;
+}
+
+int Laser::setFOV(int)
+{
+    return -1;
 }
 
 // Other Methods
